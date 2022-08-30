@@ -4,7 +4,10 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-  res.send('home works');
+  res.status(200).json({
+    success: true,
+    message: 'Home works'
+  });
 });
 
 

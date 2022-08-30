@@ -1,4 +1,4 @@
-const localDBURL = () => 'mongodb://localhost:27017/account';
+const localDBURL = (name) => `mongodb://localhost:27017/${name}`;
 
 module.exports = {
   localDBURL
