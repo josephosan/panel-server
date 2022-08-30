@@ -9,6 +9,7 @@ const logins = require('./routes/logins');
 
 const app = express();
 
+if(process.env.NODE_ENV === 'dev') debug('Starting in development mode.');
 
 // connecting to database
 const localDBURL = config.localDBURL('account');
@@ -33,5 +34,5 @@ app.use('/login', logins);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
-  debug('Listening on port ' + PORT + ' ...');
+  debug('Listening on port ' + PORT + '...');
 });

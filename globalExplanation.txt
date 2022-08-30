@@ -6,3 +6,5 @@ PORT = also for prod env
 DBUG = for development env
 DBNAME = for connecting to mongodb cloud database
 DBPASSWORD = for connecting to mongodb cloud database
+PRIVATEKEY = jwt private key for auth the user
+NODE_ENV = dev or prod

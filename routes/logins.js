@@ -5,6 +5,7 @@ const User = require('../models/SignUp');
 const bcrypt = require('bcrypt');
 
 
+
 const router = express.Router();
 
 
@@ -35,9 +36,13 @@ router.post('/', validator(loginValidate), async (req, res) => {
       return;
     }
 
+    // adding json web token (JSW);
+    const token = user.generateAuthToken();
+
     res.status(200).json({
       success: true,
-      message: 'loged in successfully.'
+      message: 'Loged in successfully.',
+      jwt: token
     });
   } catch(err) {
     res.status(500).json({

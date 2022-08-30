@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const jwt = require('jsonwebtoken');
+const config = require('../config/config');
 
-const SignUp = mongoose.model('Users', new mongoose.Schema({
+const signUpSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -22,6 +24,13 @@ const SignUp = mongoose.model('Users', new mongoose.Schema({
     maxlength: 255,
     unique: false
   }
-}));
+});
+
+signUpSchema.methods.generateAuthToken = function() {
+  const privateKey = config.jwtPrivateKey(process.env.PRIVATEKEY);
+  return jwt.sign({ id: this._id }, privateKey);
+}
+
+const SignUp = mongoose.model('Users', signUpSchema);
 
 module.exports = SignUp;

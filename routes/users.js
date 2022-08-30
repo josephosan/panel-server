@@ -55,7 +55,7 @@ router.post('/', validator(userValidate), async (req, res) => {
     user.password = await bcrypt.hash(user.password, salt);
 
     user = await user.save();
-
+    
     if(!user) {
       res.status(500).json({
         success: false,
@@ -64,8 +64,11 @@ router.post('/', validator(userValidate), async (req, res) => {
       });
       return;
     }
-
-    res.status(200).json({
+    
+    // adding json web token (JSW);
+    const token = user.generateAuthToken();
+    
+    res.header('X-Auth-Token', token).status(200).json({
       success: true,
       message: 'user saved successfully.'
     });
