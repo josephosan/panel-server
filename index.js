@@ -5,6 +5,7 @@ const debug = require('debug')('app:debug');
 const home = require('./routes/home');
 const config = require('./config/config');
 const users = require('./routes/users');
+const logins = require('./routes/logins');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(morgan('tiny'));
 // defining routes
 app.use('/', home);
 app.use('/users', users);
+app.use('/login', logins);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

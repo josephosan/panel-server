@@ -6,7 +6,7 @@ const SignUp = mongoose.model('Users', new mongoose.Schema({
     required: true,
     minlenght: 2,
     maxlength: 20,
-    unique: true
+    unique: false
   },
   email: {
     type: String,
@@ -19,7 +19,8 @@ const SignUp = mongoose.model('Users', new mongoose.Schema({
     type: String,
     required: true,
     minlenght: 8,
-    maxlength: 12
+    maxlength: 255,
+    unique: false
   }
 }));
 

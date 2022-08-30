@@ -1,0 +1,8 @@
+GLOBAL VARIABLES THAT SHOULD BE SET 
+  => accessible via process.env
+
+
+PORT = also for prod env
+DBUG = for development env
+DBNAME = for connecting to mongodb cloud database
+DBPASSWORD = for connecting to mongodb cloud database

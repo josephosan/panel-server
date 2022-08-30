@@ -9,11 +9,13 @@
   "author": "joseph.o",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "debug": "^4.3.4",
     "express": "^4.18.1",
     "mongoose": "^6.5.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.19",
+    "underscore": "^1.13.4",
     "yup": "^0.32.11"
   }
 }
