@@ -3,13 +3,36 @@ const validator = require("../middlewares/validationMiddleware");
 const userValidate = require("../validations/signUpValidation");
 const User = require('../models/SignUp');
 const bcrypt = require('bcrypt');
+const auth = require('../middlewares/auth');
+const admin = require('../middlewares/admin');
 
 
 const router = express.Router();
 
 
-router.get('/', (req, res) => {
-  res.send('users works');
+router.get('/', [auth, admin], async (req, res) => {
+  try {
+    const users = await User.find();
+    const count = await User.count();
+
+    if(!users) {
+      res.status(404).json({
+        success: true,
+        message: 'There is no user in database!'
+      });
+    }
+
+    res.status(400).json({
+      success: true,
+      count: count, 
+      data: users
+    });
+  } catch(err) {
+    res.status(500).json({
+      success: false,
+      message: 'Something bad happend!'
+    });
+  }
 });
 
 // get the new user for sign in 
@@ -67,10 +90,18 @@ router.post('/', validator(userValidate), async (req, res) => {
     
     // adding json web token (JSW);
     const token = user.generateAuthToken();
+
+    if(!token) {
+      res.status(500).json({
+        success: false,
+        message: 'Some thing bad happend! No token generated!'
+      });
+    }
     
-    res.header('X-Auth-Token', token).status(200).json({
+    res.status(200).json({
       success: true,
-      message: 'user saved successfully.'
+      message: 'user saved successfully.',
+      token: token
     });
   } catch(err) {
     res.status(500).json({

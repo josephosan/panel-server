@@ -23,12 +23,13 @@ const signUpSchema = new mongoose.Schema({
     minlenght: 8,
     maxlength: 255,
     unique: false
-  }
+  },
+  isAdmin: Boolean
 });
 
 signUpSchema.methods.generateAuthToken = function() {
   const privateKey = config.jwtPrivateKey(process.env.PRIVATEKEY);
-  return jwt.sign({ id: this._id }, privateKey);
+  return jwt.sign({ id: this._id, isAdmin: this.isAdmin }, privateKey);
 }
 
 const SignUp = mongoose.model('Users', signUpSchema);

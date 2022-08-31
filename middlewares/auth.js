@@ -4,9 +4,10 @@ const config = require('../config/config');
 module.exports = function (req, res, next) {
   const token = req.header('X-Auth-Token');
   if(!token) {
+    console.log('invalid token');
     res.status(401).json({
       success: false,
-      message: 'Access denied. No tokem provided.'
+      message: 'Access denied. No token provided.'
     });
     return;
   }

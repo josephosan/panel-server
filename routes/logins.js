@@ -42,7 +42,7 @@ router.post('/', validator(loginValidate), async (req, res) => {
     res.status(200).json({
       success: true,
       message: 'Loged in successfully.',
-      jwt: token
+      token: token
     });
   } catch(err) {
     res.status(500).json({
