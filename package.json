@@ -9,7 +9,9 @@
   "author": "joseph.o",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
+    "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "express": "^4.18.1",
