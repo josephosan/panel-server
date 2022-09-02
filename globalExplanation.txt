@@ -3,7 +3,7 @@ GLOBAL VARIABLES THAT SHOULD BE SET
 
 
 PORT = also for prod env
-DBUG = for development env
+DEBUG = for development env
 NAME = for connecting to mongodb cloud database
 PASSWORD = for connecting to mongodb cloud database
 PRIVATEKEY = jwt private key for auth the user
