@@ -9,7 +9,9 @@ module.exports = async function() {
 
     return {
       iranKhodro: JSONdata.data.items[0],
-      sipa: JSONdata.data.items[1]
+      sipa: JSONdata.data.items[1],
+      kermanMotor: JSONdata.data.items[2],
+      parsKhodro: JSONdata.data.items[3]
     }
 
   } catch(err) {
