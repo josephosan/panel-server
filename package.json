@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "joseph.o",
   "license": "ISC",
@@ -12,10 +12,12 @@
     "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "cheerio": "^1.0.0-rc.12",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
+    "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.3",
     "morgan": "^1.10.0",
@@ -23,5 +25,8 @@
     "underscore": "^1.13.4",
     "winston": "^3.8.1",
     "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "jest": "^29.0.2"
   }
 }
