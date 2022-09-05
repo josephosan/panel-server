@@ -27,9 +27,8 @@ Weaknesses:
 
 ### Built With
 
-As mentioned it is built with Node js
-
-* [![Node][Node.js]][Node-url]
+* Node.js
+* Mongodb
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -37,33 +36,34 @@ As mentioned it is built with Node js
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+### For getting started you need to set some things up
+There are two ways for you to connect to mongodb database One is by connecting localy to you PC, 
+or Connecting to mongodb cloud database.
+if you want to use mongodb cloud database, you need to set two more global variables:
+* NAME => your cloud database name
+* PASSWORD => your cloud data base password 
+You may need to change the config path too.
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Global variables: There are some variables that you need to set:
+* PORT
+* NODE_ENV => for setting the environment it can be dev or prod depending on you reeds
+* DEBUG => for debugging the application i can be app:debug or app:prod depending on you needs
+ 
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
+3. Enter your API in `config.js`
    ```js
    const API_KEY = 'ENTER YOUR API';
    ```
