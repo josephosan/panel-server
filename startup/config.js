@@ -9,5 +9,6 @@ module.exports = function() {
   if(!process.env.PASSWORD) debug('Please provide PASSWORD');
   if(!process.env.PORT) debug('Please provide PORT');
   if(!process.env.NODE_ENV) debug('Please provide NODE_ENV');
+  if(!process.env.EMAIL_AUTH_PASSWORD) debug('Please provide EMAIL_AUTH_PASSWORD');
   if(process.env.NODE_ENV === 'dev') debug('Starting in development mode.');
 }

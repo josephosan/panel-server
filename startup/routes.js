@@ -26,7 +26,7 @@ module.exports = function(app) {
   app.use('/icons', icons);
   app.use('/dashboard', dashboard);
   app.use('/tables', tables);
-
+  
   // passing error handler
   app.use(error);
 };

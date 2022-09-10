@@ -17,6 +17,17 @@ router.get('/', [auth], async (req, res) => {
       return;
     }
 
+    if(!user.isVerified) {
+      res.status(201).json({
+        success: true,
+        message: 'We have sent an email to you account, Please verify your email.',
+        userData: {
+          name: user.name,
+          email: user.email
+        }
+      });
+    }
+
     res.status(200).json({
       success: true,
       userData: {

@@ -24,6 +24,7 @@ const signUpSchema = new mongoose.Schema({
     maxlength: 255,
     unique: false
   },
+  isVerified: Boolean,
   isAdmin: Boolean
 });
 

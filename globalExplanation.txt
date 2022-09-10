@@ -8,3 +8,4 @@ NAME = for connecting to mongodb cloud database
 PASSWORD = for connecting to mongodb cloud database
 PRIVATEKEY = jwt private key for auth the user
 NODE_ENV = dev or prod
+EMAIL_AUTH_PASSWORD = password for email that sends the verification link to the user.
