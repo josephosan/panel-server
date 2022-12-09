@@ -1,8 +1,8 @@
 # About The Project
 
 
-This is a server code developed by Node, for a panel, with login and register pages.
-I also has a big data collector whitch collects data from some valnerable websites or servers. It also uses cheerio for some collecting purposes, This means it may break at some point in the future, depending on the sites behavior.
+This is a server code developed by Node, for a panel, with login and register routes.
+It also has a big data collector whitch collects data from some valnerable websites or servers. It also uses cheerio for some collecting purposes, This means it may break at some point in the future, depending on the sites behavior.
 
 It collects data about:
 * Dollar, Gold, Digital currency, Oil and Coin Prices 
